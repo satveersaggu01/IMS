@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="InventoryMgtSys" Class="InventoryManagementDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=lenovo-pc\sqlexpress;Initial Catalog=InventoryMgtSys;Integrated Security=True" SettingsObjectName="DataAccessLayer.Properties.Settings" SettingsPropertyName="InventoryMgtSysConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FareName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isDeleted" Type="System.Boolean" CanBeNull="true" />
+      <Association Name="Customer_Sale" Member="Sales" ThisKey="CustomerID" OtherKey="CustomerID" Type="Sale" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductsDetails" Member="ProductsDetails">
+    <Type Name="ProductsDetail">
+      <Column Name="PDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MfgDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NoOfProducts" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PurchasePrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SellingPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateOfAdding" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Product_ProductsDetail" Member="Product" ThisKey="ProductID" OtherKey="ProductID" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductType" Member="ProductTypes">
+    <Type Name="ProductType">
+      <Column Name="ProductTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="ProductType_Product" Member="Products" ThisKey="ProductTypeID" OtherKey="ProductTypeID" Type="Product" />
+      <Association Name="ProductType_ProductHistory" Member="ProductHistories" ThisKey="ProductTypeID" OtherKey="ProductTypeID" Type="ProductHistory" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductTypeID" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ManufacturedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MfgDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PurchasePrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SellingPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NumberOfItems" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Product_ProductsDetail" Member="ProductsDetails" ThisKey="ProductID" OtherKey="ProductID" Type="ProductsDetail" />
+      <Association Name="Product_SaleDetail" Member="SaleDetails" ThisKey="ProductID" OtherKey="ProductID" Type="SaleDetail" />
+      <Association Name="Product_ProductHistory" Member="ProductHistories" ThisKey="ProductID" OtherKey="ProductID" Type="ProductHistory" />
+      <Association Name="ProductType_Product" Member="ProductType" ThisKey="ProductTypeID" OtherKey="ProductTypeID" Type="ProductType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SaleDetails" Member="SaleDetails">
+    <Type Name="SaleDetail">
+      <Column Name="SaleDetailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SaleID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PurchasePrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SalePrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoOfItems" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SaleDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Product_SaleDetail" Member="Product" ThisKey="ProductID" OtherKey="ProductID" Type="Product" IsForeignKey="true" />
+      <Association Name="Sale_SaleDetail" Member="Sale" ThisKey="SaleID" OtherKey="SaleID" Type="Sale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sales" Member="Sales">
+    <Type Name="Sale">
+      <Column Name="SaleID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaleStartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AmountRecieved" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastRecievedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Sale_SaleDetail" Member="SaleDetails" ThisKey="SaleID" OtherKey="SaleID" Type="SaleDetail" />
+      <Association Name="Sale_BalanceInfo" Member="BalanceInfos" ThisKey="SaleID" OtherKey="SaleID" Type="BalanceInfo" />
+      <Association Name="Customer_Sale" Member="Customer" ThisKey="CustomerID" OtherKey="CustomerID" Type="Customer" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BalanceInfo" Member="BalanceInfos">
+    <Type Name="BalanceInfo">
+      <Column Name="BalanceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CusomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SaleID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="AmountRecieved" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReturnDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Sale_BalanceInfo" Member="Sale" ThisKey="SaleID" OtherKey="SaleID" Type="Sale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductHistory" Member="ProductHistories">
+    <Type Name="ProductHistory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ManufacturedBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MfgDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ExpiryDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PurchasePrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SellingPrice" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Product_ProductHistory" Member="Product" ThisKey="ProductID" OtherKey="ProductID" Type="Product" IsForeignKey="true" />
+      <Association Name="ProductType_ProductHistory" Member="ProductType" ThisKey="ProductTypeID" OtherKey="ProductTypeID" Type="ProductType" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

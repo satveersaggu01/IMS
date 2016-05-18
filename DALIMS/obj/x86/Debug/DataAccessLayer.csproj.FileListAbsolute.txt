@@ -1,0 +1,33 @@
+F:\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Project\Inventory Control System\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+F:\Project\Inventory Control System\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+F:\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\DataAccessLayer.exe
+F:\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\DataAccessLayer.pdb
+J:\Project\Inventory Control System\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+J:\Project\Inventory Control System\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+J:\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\ResolveAssemblyReference.cache
+J:\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\DataAccessLayer.exe
+J:\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\DataAccessLayer.pdb
+F:\Vinder Project\Project\Inventory Control System\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+F:\Vinder Project\Project\Inventory Control System\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+F:\Vinder Project\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\Vinder Project\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\DataAccessLayer.exe
+F:\Vinder Project\Project\Inventory Control System\DataAccessLayer\obj\x86\Debug\DataAccessLayer.pdb
+F:\.Net Work\InventoryManagementSystem\DALIMS\bin\Debug\DataAccessLayer.exe
+F:\.Net Work\InventoryManagementSystem\DALIMS\bin\Debug\DataAccessLayer.pdb
+F:\.Net Work\InventoryManagementSystem\DALIMS\obj\x86\Debug\ResolveAssemblyReference.cache
+F:\.Net Work\InventoryManagementSystem\DALIMS\obj\x86\Debug\DataAccessLayer.exe
+F:\.Net Work\InventoryManagementSystem\DALIMS\obj\x86\Debug\DataAccessLayer.pdb
+G:\Satveer data\InventoryManagementSystem\DALIMS\bin\Debug\DataAccessLayer.exe
+G:\Satveer data\InventoryManagementSystem\DALIMS\bin\Debug\DataAccessLayer.pdb
+G:\Satveer data\InventoryManagementSystem\DALIMS\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Satveer data\InventoryManagementSystem\DALIMS\obj\x86\Debug\DataAccessLayer.exe
+G:\Satveer data\InventoryManagementSystem\DALIMS\obj\x86\Debug\DataAccessLayer.pdb
+G:\Satveer data\InventoryManagementSystem new\DALIMS\obj\x86\Debug\ResolveAssemblyReference.cache
+G:\Satveer data\InventoryManagementSystem new\DALIMS\bin\Debug\DataAccessLayer.exe.config
+G:\Satveer data\InventoryManagementSystem new\DALIMS\bin\Debug\DataAccessLayer.exe
+G:\Satveer data\InventoryManagementSystem new\DALIMS\bin\Debug\DataAccessLayer.pdb
+G:\Satveer data\InventoryManagementSystem new\DALIMS\obj\x86\Debug\DataAccessLayer.exe
+G:\Satveer data\InventoryManagementSystem new\DALIMS\obj\x86\Debug\DataAccessLayer.pdb
+G:\Satveer data\InventoryManagementSystem new\DALIMS\bin\Debug\DocumentFormat.OpenXml.dll
+G:\Satveer data\InventoryManagementSystem new\DALIMS\bin\Debug\DocumentFormat.OpenXml.Extensions.dll
